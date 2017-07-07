@@ -1,0 +1,30 @@
+confidence is: 100
+version is: 
+name is: EdgeCast
+categories is: [u'CDN']
+icon is: EdgeCast.png
+
+confidence is: 100
+version is: UA
+name is: Google Analytics
+categories is: [u'Analytics']
+icon is: Google Analytics.svg
+
+confidence is: 50
+version is: 
+name is: Microsoft ASP.NET
+categories is: [u'Web Frameworks']
+icon is: Microsoft ASP.NET.png
+
+confidence is: 25
+version is: 
+name is: IIS
+categories is: [u'Web Servers']
+icon is: IIS.png
+
+confidence is: 25
+version is: 
+name is: Windows Server
+categories is: [u'Operating Systems']
+icon is: Microsoft.svg
+

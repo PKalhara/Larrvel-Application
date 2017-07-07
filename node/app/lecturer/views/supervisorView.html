@@ -1,0 +1,541 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>My Home</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="">User Home</a>
+            </li>
+            <li class="active">
+                <strong>My Home</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <div class="row">
+
+                <div class="col-lg-8 ">
+                    <div class="col-lg-11">
+                        <div class="ibox-content" style="font-size: medium">
+                            <div class="row">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <dl class="dl-horizontal">
+                                        <dt>Modules in Charge:</dt>
+                                        <div ng-repeat="modInChgName in modInChgName">
+                                        <dd class="ng-binding" style="font-size: small"><a href="#/modules_single/{{ modInChgName._id }}">{{modInChgName.courseName}}</a> </dd>
+                                        </div>
+                                        <dd class="ng-binding"><div class="" ng-show="modInChg" style="font-size: small">No modules to Show</div> </dd>
+                                        <br>
+                                        <dt>Modules Lecturing:</dt>
+                                        <div ng-repeat="alllecModules in alllecModules">
+                                        <dd class="ng-binding" style="font-size: small"><a href="#/modules_single/{{ alllecModules._id }}">{{alllecModules.courseName}}</a></dd>
+                                        </div>
+                                        <dd class="ng-binding"><div class="" ng-show="lec" style="font-size: small">No modules to Show</div> </dd>
+                                         <br>
+                                        <dt style="width: 170px">Modules Supervised:</dt>
+                                        <div ng-repeat="allSupervisorModules in allSupervisorModules">
+                                        <dd class="ng-binding" style="font-size: small"><a href="#/modules_single/{{ allSupervisorModules._id }}">{{allSupervisorModules.courseName}}</a></dd>
+                                        </div>
+                                        <dd class="ng-binding"><div class="" ng-show="mod" style="font-size: small">No modules to Show</div> </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-6" id="cluster_info">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11">
+                        <br>
+                    </div>
+
+                    <div class="col-lg-11 pre-scrollable ">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>All project teams assigned</h5>
+                            </div>
+                            <div class="ibox-content">
+
+                                <div class="project-list">
+
+                                    <table class="table table-hover">
+                                        <tbody>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Contract with Zender Company</a>
+                                                <br>
+                                                <small>Created 14.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 48%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 48%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">There are many variations of passages</a>
+                                                <br>
+                                                <small>Created 11.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 28%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 28%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-default">Unactive</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Many desktop publishing packages and
+                                                    web</a>
+                                                <br>
+                                                <small>Created 10.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 8%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Letraset sheets containing</a>
+                                                <br>
+                                                <small>Created 22.07.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 83%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 83%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Contrary to popular belief</a>
+                                                <br>
+                                                <small>Created 14.07.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 97%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 97%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Contract with Zender Company</a>
+                                                <br>
+                                                <small>Created 14.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 48%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 48%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">There are many variations of passages</a>
+                                                <br>
+                                                <small>Created 11.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 28%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 28%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-default">Unactive</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Many desktop publishing packages and
+                                                    web</a>
+                                                <br>
+                                                <small>Created 10.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 8%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Letraset sheets containing</a>
+                                                <br>
+                                                <small>Created 22.07.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 83%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 83%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">Contrary to popular belief</a>
+                                                <br>
+                                                <small>Created 14.07.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 97%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 97%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">Active</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">There are many variations of passages</a>
+                                                <br>
+                                                <small>Created 11.08.2014</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>Completion with: 28%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 28%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+                                            <td class="project-people">
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                                <a href="#"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i>
+                                                    View </a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i>
+                                                    Edit </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="ibox-content profile-content">
+                        <h4><strong>All Events</strong></h4>
+                        <div class="user-button">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <!--Start of email pop up-->
+
+                                    <div class="ibox-content">
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal5"><i class="fa fa-envelope"></i>Add
+                                                Appointment
+                                            </button>
+                                        </div>
+                                        <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="mail-box-header">
+                                                        <div class="pull-right tooltip-demo">
+                                                        </div>
+                                                        <h2>
+                                                            Schedule Meeting
+                                                        </h2>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="mail-body">
+                                                            <form class="form-horizontal" method="get">
+
+                                                                    <div class="form-group"><label class="col-lg-2 control-label" style="margin-left:65px">Date</label>
+                                                                        <label class="col-lg-4 control-label" >Time</label>
+                                                                        <label class="col-lg-3 control-label">Venue</label>
+                                                                    </div>
+
+                                                                <div class="" >
+                                                                    <div class="row">
+                                                                        <div class="col-md-1"></div>
+                                                                        <div class="col-md-1"><input type="text" id="datepicker" ng-model="maildate"></div>
+                                                                        <div class="col-md-3"></div>
+                                                                        <div class="col-md-2"> <input id="basicExample" type="text" class="time ui-timepicker-input" autocomplete="off" ng-model="mailtime" style="width: 100px;margin-left: 20px"></div>
+
+                                                                        <div class="col-md-2"></div>
+                                                                        <input type="text"  ng-model="mailvenue" style="width: 100px">
+                                                                    </div>
+                                                                    <div class="col-md-1"></div>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="row">
+                                                                        <div class="error_msgs col-md-3" ng-show="error" style="color:red;font-size: small;margin-left: 37px;">{{errorMsg}}</div>
+                                                                        <div class="error_msgs col-md-3" ng-show="errorTime" style="color:red;font-size: small;margin-left:10px">{{errorMsgTime}}</div>
+                                                                        <div class="error_msgs col-md-3" ng-show="errorVenue" style="color:red;font-size: small;margin-left: 18px">{{errorMsgVenue}}</div>
+                                                                    </div>
+                                                                </div>
+                                                               <hr>
+
+                                                                <div class="form-group"><label class="col-sm-2 control-label">To:</label>
+                                                                    <div class="col-sm-10"><input type="text" ng-model="mailto" class="form-control" value=""></div>
+
+                                                                <div class="col-md-2"></div>
+                                                                <div class="error_msgs col-md-4" ng-show="errorTo" style="color:red;font-size: small">{{errorMsgTo}}</div>
+                                                                </div>
+
+                                                                <div class="form-group"><label class="col-sm-2 control-label">Subject:</label>
+                                                                    <div class="col-sm-10"><input type="text" class="form-control" ng-model="mailsubject" value=""></div>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+                                                        <div class="mail-text h-100">
+                                                            <div class="summernote" style="display: none;">
+                                                            </div><div class="note-editor note-frame panel panel-default"><div class="note-dropzone">  <div class="note-dropzone-message"></div></div>
+
+                                                            <textarea class="note-codable" ng-model="mailbody" style="width: 520px;height: 100px"></textarea>
+
+                                                            <div class="note-editing-area"><div class="note-handle">
+                                                            <div class="note-control-selection" style="display: none;"><div class="note-control-selection-bg"></div><div class="note-control-holder note-control-nw"></div><div class="note-control-holder note-control-ne"></div>
+
+                                                            <div class="note-control-holder note-control-sw"></div><div class="note-control-sizing note-control-se"></div><div class="note-control-selection-info"></div>
+                                                        </div>
+                                                        </div>
+                                                            </div><div class="note-statusbar">  <div class="note-resizebar">    <div class="note-icon-bar"></div>    <div class="note-icon-bar"></div>    <div class="note-icon-bar"></div>  </div></div><div class="modal link-dialog" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 class="modal-title">Insert Link</h4>    </div>    <div class="modal-body"><div class="form-group"><label>Text to display</label><input class="note-link-text form-control" type="text"></div><div class="form-group"><label>To what URL should this link go?</label><input class="note-link-url form-control" type="text" value="http://"></div><div class="checkbox"><label><input type="checkbox" checked=""> Open in new window</label></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-link-btn disabled" disabled="">Insert Link</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Insert Image</h4>    </div>    <div class="modal-body"><div class="form-group note-group-select-from-files"><label>Select from files</label><input class="note-image-input form-control" type="file" name="files" accept="image/*" multiple="multiple"></div><div class="form-group note-group-image-url" style="overflow:auto;"><label>Image URL</label><input class="note-image-url form-control col-md-12" type="text"></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-image-btn disabled" disabled="">Insert Image</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Insert Video</h4>    </div>    <div class="modal-body"><div class="form-group row-fluid"><label>Video URL? <small class="text-muted">(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)</small></label><input class="note-video-url form-control span12" type="text"></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-video-btn disabled" disabled="">Insert Video</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Help</h4>    </div>    <div class="modal-body" style="max-height: 300px; overflow: scroll;"><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>ENTER</kbd></label><span>Insert Paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+Z</kbd></label><span>Undoes the last command</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+Y</kbd></label><span>Redoes the last command</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>TAB</kbd></label><span>Tab</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>SHIFT+TAB</kbd></label><span>Untab</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+B</kbd></label><span>Set a bold style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+I</kbd></label><span>Set a italic style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+U</kbd></label><span>Set a underline style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+S</kbd></label><span>Set a strikethrough style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+BACKSLASH</kbd></label><span>Clean a style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+L</kbd></label><span>Set left align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+E</kbd></label><span>Set center align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+R</kbd></label><span>Set right align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+J</kbd></label><span>Set full align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM7</kbd></label><span>Toggle unordered list</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM8</kbd></label><span>Toggle ordered list</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+LEFTBRACKET</kbd></label><span>Outdent on current paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+RIGHTBRACKET</kbd></label><span>Indent on current paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM0</kbd></label><span>Change current block's format as a paragraph(P tag)</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM1</kbd></label><span>Change current block's format as H1</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM2</kbd></label><span>Change current block's format as H2</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM3</kbd></label><span>Change current block's format as H3</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM4</kbd></label><span>Change current block's format as H4</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM5</kbd></label><span>Change current block's format as H5</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM6</kbd></label><span>Change current block's format as H6</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+ENTER</kbd></label><span>Insert horizontal rule</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+K</kbd></label><span>Show Link Dialog</span></div>    <div class="modal-footer"><p class="text-center"><a href="http://summernote.org/" target="_blank">Summernote 0.8.2</a> · <a href="https://github.com/summernote/summernote" target="_blank">Project</a> · <a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a></p></div>  </div></div></div></div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <a class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email" ng-click="discardEmail()"><i class="fa fa-times"></i> Discard</a>
+                                                        <button type="button" class="btn btn-primary" ng-click="sendMeetingRequest()"><i class="fa fa-reply"></i>Send</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <!--End of email pop up-->
+
+                                </div>
+                                <br>
+                                <div class="col-md-6">
+                                    <div class="infont col-md-3 col-sm-4"><a href="#/supervisorCal"><i
+                                            class="fa fa-2x fa-calendar"></i>All appoinments</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox float-e-margins">
+
+                        <div class="ibox-content ibox-heading">
+                            <h3>Monthly Schedule</h3>
+                            <!--      <small><i class="fa fa-map-marker"></i> Meeting is on 6:00am. Check your schedule to see detail.</small>-->
+                        </div>
+                        <div class="ibox-content inspinia-timeline pre-scrollable">
+
+                            <div class="timeline-item">
+                                <div class="row">
+                                    <div ng-repeat="meeting in meetings">
+                                        <div class="col-xs-3 date">
+                                            <i class="fa fa-briefcase"></i>
+                                            {{meeting.date}}
+                                            <br>
+                                            <small class="text-navy">{{meeting.time}}</small>
+                                        </div>
+                                        <div class="col-xs-7 content no-top-border">
+                                            <p class="m-b-xs"><strong>{{meeting.header}}</strong></p>
+
+                                            <p>{{meeting.body}}</p>
+
+                                            <p><span data-diameter="40" class="updating-chart" style="display: none;">4,1,9,3,8,7,1,8,3,6,10,9,4,3,3,10,6,0,6,5,6,3,4,1,6,10,3,1,7,5,9,1,2,9,3,5,1</span>
+                                                <svg class="peity" height="16" width="64">
+                                                    <polygon fill="#1ab394"
+                                                             points="0 15 0 9.5 1.7777777777777777 14 3.5555555555555554 2 5.333333333333333 11 7.111111111111111 3.5 8.88888888888889 5 10.666666666666666 14 12.444444444444443 3.5 14.222222222222221 11 16 6.5 17.77777777777778 0.5 19.555555555555554 2 21.333333333333332 9.5 23.11111111111111 11 24.888888888888886 11 26.666666666666664 0.5 28.444444444444443 6.5 30.22222222222222 15.5 32 6.5 33.77777777777778 8 35.55555555555556 6.5 37.33333333333333 11 39.11111111111111 9.5 40.888888888888886 14 42.666666666666664 6.5 44.44444444444444 0.5 46.22222222222222 11 48 14 49.77777777777777 5 51.55555555555555 8 53.33333333333333 2 55.11111111111111 14 56.888888888888886 12.5 58.666666666666664 2 60.44444444444444 11 62.22222222222222 8 64 14 64 15"></polygon>
+                                                    <polyline fill="transparent"
+                                                              points="0 9.5 1.7777777777777777 14 3.5555555555555554 2 5.333333333333333 11 7.111111111111111 3.5 8.88888888888889 5 10.666666666666666 14 12.444444444444443 3.5 14.222222222222221 11 16 6.5 17.77777777777778 0.5 19.555555555555554 2 21.333333333333332 9.5 23.11111111111111 11 24.888888888888886 11 26.666666666666664 0.5 28.444444444444443 6.5 30.22222222222222 15.5 32 6.5 33.77777777777778 8 35.55555555555556 6.5 37.33333333333333 11 39.11111111111111 9.5 40.888888888888886 14 42.666666666666664 6.5 44.44444444444444 0.5 46.22222222222222 11 48 14 49.77777777777777 5 51.55555555555555 8 53.33333333333333 2 55.11111111111111 14 56.888888888888886 12.5 58.666666666666664 2 60.44444444444444 11 62.22222222222222 8 64 14"
+                                                              stroke="#169c81" stroke-width="1"
+                                                              stroke-linecap="square"></polyline>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Date Picker-->
+<script>
+    $(document).ready(function() {
+        $("#datepicker").datepicker();
+
+
+        $('#basicExample').timepicker();
+    });
+
+
+
+</script>

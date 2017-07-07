@@ -1,0 +1,121 @@
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>All Events</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index-2.html">All Events</a>
+            </li>
+            <li>
+                App Views
+            </li>
+            <li class="active">
+                <strong>All Events</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <ul class="notes">
+                <li ng-repeat="allMeetings in allMeetings">
+                    <div>
+                        <h4>{{allMeetings.header}}</h4>
+                        <p>{{allMeetings.body}}</p>
+                        <h5><B>Date : {{allMeetings.date}}</B></h5>
+                        <h5><B>Time : {{allMeetings.time}}</B></h5>
+                        <button type="button" ng-click="getAppDeatils(allMeetings._id)"  data-toggle="modal" data-target="#myModal5"><B><small>Edit</small></B></button>
+                        <!--<a data-toggle="modal" data-target="#myModal6"><i class="fa fa-trash-o "></i></a>-->
+                        <a ng-click="confirmCancel(allMeetings._id)"><i class="fa fa-trash-o "></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--Appointment edit dialog pop up-->
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Update Appointment</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <form class="form-horizontal" name="updateMeeting">
+                    <div class="form-group"><label class="col-md-2 control-label">To :</label>
+                        <div class="col-lg-10"><label class="control-label " ng-model="emailTo">{{appoinment.to}}</label>
+                        </div>
+                    </div>
+
+
+                        <div class="form-group"><label class="col-lg-2 control-label" style="margin-left:65px">Date</label>
+                                                <label class="col-lg-3 control-label" style="margin-left:30px">Time</label>
+                                                <div class="col-md-2"></div>
+                                                <label class="col-lg-2 control-label" >Venue</label>
+                        </div>
+
+                        <div class="col-md-1"></div>
+                        <div class="form-group" id="data_1">
+                            <div class="col-md-1"><input type="" id="datepicker"  ng-model="appoinment.date"></div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-1"> <input type="text"  ng-model="appoinment.time" ></div>
+                            <div class="col-md-3"></div>
+                            <input type="text"  ng-model="appoinment.venue" style="width: 100px">
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div>
+                            <div class="row">
+                             <div class="error_msgs col-md-4" ng-show="error" style="color:red;font-size: small;margin-left: 37px;">{{errorMsg}}</div>
+                             <div class="error_msgs col-md-3" ng-show="errorTime" style="color:red;font-size: small;margin-left: 10px">{{errorMsgTime}}</div>
+                             <div class="error_msgs col-md-3" ng-show="errorVenue" style="color:red;font-size: small;margin-left: 10px">{{errorMsgVenue}}</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group"><label class="col-lg-2 control-label">Subject</label>
+                            <div class="col-lg-10"><input type="text"class="form-control" ng-model="appoinment.header" >
+                            </div>
+                            <div class="error_msgs col-md-12" ng-show="errorSub" style="color:red;font-size: small;margin-left: 30px">{{errorMsgSub}}</div>
+                        </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Message</label>
+                            </div>
+                            <textarea class="note-codable" ng-model="appoinment.body"  style="width: 475px;height: 100px;margin-left: 27px;top: 20px"></textarea>
+                            <div class="error_msgs col-md-12" ng-show="errorBody" style="color:red;font-size: small;margin-left: 10px">{{errorMsgBody}}</div>
+
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-md-5"></div>
+                            <div class="">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" ng-click="updateAppoinment(appoinment._id)" ><i class="fa fa-reply"></i>Update Appointment</button>
+                            </div>
+                        </div>
+          </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Date Picker-->
+<script>
+    $(document).ready(function() {
+        $("#datepicker").datepicker();
+    });
+
+</script>
+
+
+
+
+

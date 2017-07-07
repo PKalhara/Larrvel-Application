@@ -1,0 +1,113 @@
+<div id="wrapper">
+    <header class="header normal-header" data-spy="affix" data-offset-top="197">
+        <div class="container">
+            <nav class="navbar navbar-default yamm">
+                <div class="container-full">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand with-text" title="PSD to HTML" href="index.html"></a>
+                    </div>
+                    <!-- end navbar header -->
+
+                    <div id="navbar" class="navbar-collapse collapse" ng-switch="registerContent">
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                        
+                            <li class="btn btn-default"><a title="Join for free" ng-click="showregister()" ng-switch-when="false">Join Us</a></li>
+                            <li class="btn btn-default"><a title="login to site" ng-click="showlogin()" ng-switch-when="true">Login</a></li>
+
+                        </ul>
+                        <!-- end dropdown -->
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+                <!--/.container-fluid -->
+            </nav>
+            <!-- end nav -->
+        </div>
+        <!-- end container -->
+    </header>
+    <!-- end header -->
+
+    <div class="demo-parallax parallax section looking-photo" data-stellar-background-ratio="0.7" style="background-image:url('upload/demo_04.jpg');">
+        <!--<h3 style="color: white;z-index: 2" ng-show="registerDiv">dfsdsf</h3>-->
+        <div class="container">
+            <div class="row centermessage text-left">
+                <div class="col-md-7">
+                    <div class="tagline"><h4>Welcome to SLIIT Project Management Portal</h4></div>
+                    <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>  -->
+                </div>
+
+                <div class="col-md-5" ng-switch="registerContent">
+                    <form name="login_form" ng-submit="login(email,password)" ng-switch-when="false">
+                        <div class="row section-signup semitrans">
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-email">
+                                    <label class="sr-only" for="inputEmail">Your Email</label>
+                                    <input type="email" ng-model="email" ng-required="true" class="form-control form-control-lg" id="inputEmail" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-password">
+                                    <label class="sr-only" for="inputEmail">Password</label>
+                                    <input type="password" ng-model="password" ng-required="true" class="form-control form-control-lg" id="inputPassword" placeholder="Password" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <p>Your email is safe with us and we hate spam as much as you do.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
+
+                    <form name="register_form" ng-submit="register(name,email,itnum,password)" ng-switch-when="true">
+                        <div class="row section-signup semitrans">
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-name">
+                                    <label class="sr-only" for="registerName">Your Name</label>
+                                    <input type="text" ng-model="name" ng-required="true" class="form-control form-control-lg" id="registerName" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-email">
+                                    <label class="sr-only" for="registerEmail">Your Email</label>
+                                    <input type="email" ng-model="email" ng-required="true" class="form-control form-control-lg" id="registerEmail" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-name">
+                                    <label class="sr-only" for="registerItnum">Your IT Number</label>
+                                    <input type="text" ng-model="itnum" ng-required="true" class="form-control form-control-lg" id="registerItnum" placeholder="IT Number">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group has-icon-left form-control-">
+                                    <label class="sr-only" for="registerPassword">Password</label>
+                                    <input type="password" ng-model="password" ng-required="true" class="form-control form-control-lg" id="registerPassword" placeholder="Password" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,175 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add New Projects</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index-2.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Create Projects</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Projects Pool</h5>
+                    <div class="ibox-tools">
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-6 b-r">
+
+                            <h4 style="color:#AFA9A9;text-align:center">Create Projects</h4>
+
+                            <form name="form" role="form" ng-submit="addProjectFormSubmit()">
+                                <div class="form-group">
+                                    <label>Project Name</label>
+                                    <input type="text" placeholder="Enter Project name" class="form-control" ng-model="formData.pname" name="pname" required>
+                                    <p ng-show="form.pname.$error.required" style="color:#FEC2C2">*Project name is required.</p>
+                                </div>
+
+                                <!--       
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" placeholder="Enter Project description" class="form-control" ng-model="formData.pdes" name="pdesc" required> 
+                                    <p ng-show="form.pdesc.$error.required" style="color:#FEC2C2">*Description is required.</p>
+                                </div> -->
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" ng-model="formData.pdes" name="pdesc" placeholder="Enter Project description" required></textarea>
+                                    <p ng-show="form.pdesc.$error.required" style="color:#FEC2C2">*Description is required.</p>
+                                </div>
+
+                                <div>
+                                    <button ng-disabled="form.pname.$error.required || form.pdesc.$error.required" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Create</strong></button>
+                                </div>
+                            </form>
+
+                            
+<!-- 
+                            <br/><br/>
+
+                            <table class="table">
+                                <tr>
+                                    <th>Col 1</th>
+                                    <th>Col 2</th>
+                                    <th>Col 3</th>    
+                                </tr>
+                                <tr>
+                                    <td>Col 1</td>
+                                    <td>Col 2</td>
+                                    <td>Col 3</td>    
+                                </tr>
+                               <tr>
+                                    <td>Col 1</td>
+                                    <td>Col 2</td>
+                                    <td>Col 3</td>     
+                                </tr>
+                                
+                            </table> -->
+
+
+
+                            
+
+                           
+                        </div>
+                        <div class="col-sm-6 b-r">
+
+                            <h4 style="color:#AFA9A9;text-align:center">Post Notices</h4>
+
+
+                            <form role="form" name="nform" ng-submit="postNoticeFormSubmit()">
+                                <div class="form-group">
+                                    <label>Project</label> 
+
+                                    <select class="form-control m-b" ng-model="selectedOption" ng-options="pro.name for pro in projects" ng-change="selectedItemChanged()">
+
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" placeholder="Title of the Notice" class="form-control" ng-model="formData.notice_title" name="ntitle" required> 
+                                    <p ng-show="nform.ntitle.$error.required" style="color:#FEC2C2">*Title is required.</p>
+                                </div>
+                                
+                                <!-- 
+                                <div class="form-group">
+                                    <label>Decription</label>
+                                    <input type="text" placeholder="Description of the Notice" class="form-control" ng-model="formData.notice_desc" name="ndesc" required> 
+                                    <p ng-show="nform.ndesc.$error.required" style="color:#FEC2C2">*Decription is required.</p>
+                                </div>
+                                -->
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" ng-model="formData.notice_desc" name="ndesc" placeholder="Description of the Notice" required></textarea>
+                                    <p ng-show="nform.ndesc.$error.required" style="color:#FEC2C2">*Decription is required.</p>
+                                </div>
+
+                                <div>
+                                    <button ng-disabled="nform.ndesc.$error.required || nform.ntitle.$error.required" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Post</strong></button>
+                                </div>
+                            </form>
+
+                            <br/><br/>
+                            
+                            <h4 style="color:#AFA9A9;text-align:center">Posted Notices</h4>
+                            
+                            <div class="ibox-content inspinia-timeline">
+
+                                <div ng-repeat="x in notices">
+                                    <div ng-repeat="n in x.notices | orderBy:'-created_at'">
+                                        <div class="timeline-item">
+                                            <div class="row">
+                                                <div class="col-xs-3 date">
+                                                    <i class="fa fa-file-text"></i>
+                                                    {{n.created_at| date:'y-M-d'}}
+                                                    <br>
+                                                    <small class="text-navy">{{n.created_at| date:'HH:mm:ss'}}</small>
+                                                </div>
+                                                <div class="col-xs-9 content">
+                                                    <p class="m-b-xs"><strong>{{n.title}}</strong></p>
+                                                    <p>{{n.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>              
+                                    </div>   
+
+                                    <div ng-hide="x.notices.length">
+                                        No Notices yet!
+                                    </div>
+.
+
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>    

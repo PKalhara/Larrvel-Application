@@ -1,0 +1,120 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-sm-4">
+	    <h2>My Projects</h2>
+	    <ol class="breadcrumb">
+	        <li>
+	            <a href="index-2.html">Home</a>
+	        </li>
+	        <li class="active">
+	            <strong>My Projects list</strong>
+	        </li>
+	    </ol>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>My Projects</h5>
+                    <div class="ibox-tools">
+                        <a href="/lecturer/#/assignProjects" class="btn btn-primary btn-xs">Assign new project</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-md-1">
+                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i> Refresh</button>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control" ng-model="search"> <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
+                        </div>
+                    </div>
+
+                    <div class="project-list">
+
+                        <table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Project Name</th>
+									<th>Module Name</th>
+									<th>Total Bids</th>
+									<th>Bids</th>
+								</tr>
+							</thead>
+                            <tbody>
+                                <tr ng-repeat="poc in projects | filter:search">
+
+                                    <td class="project-title">
+                                        <a href="project_detail.html">{{poc.project.name}}</a>
+                                        <br/>
+                                        <small>Assigned 14.08.2016</small>
+                                    </td>
+
+                                    <td class="project-title">
+                                        <a href="project_detail.html">{{poc.course.courseName}}</a>
+                                    </td>
+                                    
+									<td class="project-title">
+											<a href="project_detail.html">{{poc.bids.length}}</a>
+									</td>
+
+                                    <td class="project-people" style="text-align:left">
+                                        
+                                        <table>
+                                            <tr ng-repeat="bid in poc.bids">
+
+                                                <td>
+                                                    <img alt="image" class="img-circle" src="img/default.png">
+                                                </td>
+                                                <td>
+                                                    <a href="#">{{bid.by.name}}</a>
+                                                </td>
+                                                <td>
+
+                                                    <div ng-if="bid.status === true" class="project-completion">
+                                                        <small>Completion with: 48%</small>
+                                                        <div class="progress progress-mini">
+                                                            <div style="width: 48%;" class="progress-bar"></div>
+                                                        </div>
+                                                        <div>
+                                                            <br/>
+                                                            <a href="#"><span class="label label-warning">View Progress</span></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div ng-if="(bid.status === false) && (bid.active === true)">
+                                                        <a ng-click="approve(bid,poc)"><span class="label label-primary">Approve</span></a>
+                                                        &nbsp;
+                                                        <a ng-click="decline(bid,poc)"><span class="label label-danger">Decline</span></a>
+                                                    </div>
+
+                                                    <div ng-if="(bid.status === false) && (bid.active === false)">
+                                                        <span style="color:red">Rejected</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <a ng-click="recover(bid,poc)"><span class="label label-success">Recover</span></a> &nbsp;
+                                                        <a ng-click="delete(bid,poc)"><span class="label label-danger">Remove</span></a>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+
+                                        <div ng-hide="poc.bids.length">
+                                            No bids yet!
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

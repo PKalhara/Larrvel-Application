@@ -1,0 +1,154 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create Module</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="#/modules">Modules</a>
+            </li>
+            <li class="active">
+                <strong>Create Module</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h3 class="col-lg-6">Create Module</h3>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" id="content">
+                    <div class="row">
+                    <div class="col-sm-6 b-r">
+                        <form role="form" id="form1" name="form1">
+                            <div class="form-group"><label>Module Name*</label> <input id="name" name="name" ng-model="formData.name" type="text" placeholder="Enter module name" class="form-control required"></div>
+                            <div class="form-group"><label>Abbreviation</label> <input id="abbr" name="abbr" ng-model="formData.abbr" type="text" placeholder="Enter abbreviation" class="form-control required"></div>
+                            <div class="form-group"><label>Description</label> <textarea id="description" name="description" ng-model="formData.description" rows="4" placeholder="Enter additional details" class="form-control required"></textarea></div>
+                        </form>
+                    </div>
+                        <div class="col-sm-6">
+                            <form role="form" id="form2" name="form2">
+                                <div class="form-group"><label>Alocating year*</label>
+                                    <select class="chosen-select form-control" id="year" name="year" chosen
+                                            ng-model="formData.year"
+                                            ng-options="y for y in years">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group"><label>Allocating semester*</label>
+                                    <select class="chosen-select form-control" id="semester" name="semester" chosen
+                                            ng-model="formData.semester"
+                                            ng-options="s for s in semesters">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group"><label>Lecturer in-charge</label>
+                                    <select class="chosen-select form-control" id="lecInCharge" name="lecInCharge" chosen
+                                            ng-model="formData.lecInCharge"
+                                            ng-options="l.name for l in lecturers">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group"><label>Enrolment key*</label> <input id="enkey" name="enkey" ng-model="formData.enkey" type="text" placeholder="Enter enrolment key" class="form-control required"></div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" style="text-align: center;">
+                        <div>
+                            <button class="btn btn-md btn-primary m-t-n-xs" id="submit" name="submit" type="submit" style="width: 120px"><strong>Create Module</strong></button>
+                            <button class="btn btn-md btn-default btn-outline m-t-n-xs" style="width: 120px" ng-click="clear()"><strong>Clear</strong></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Jquery Validate -->
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $("#form1").validate({
+            rules: {
+                name: {
+                    required: true,
+
+                },
+                abbr: {
+                    required: true
+
+                },
+                description: {
+                    required: false
+
+                }
+            },
+            messages: {
+                name: "Module name is required",
+                abbr: "Abbreviation is required"
+            }
+        });
+
+        $("#form2").validate({
+            ignore: [],
+            rules: {
+                year: {
+                    required: true,
+
+                },
+                semester: {
+                    required: true
+
+                },
+                lecInCharge: {
+                    required: false
+
+                },
+                enkey: {
+                    required: true
+
+                }
+            },
+            messages: {
+                year: "Year is required",
+                semester: "Semester is required",
+                enkey: "Enrollment key is required"
+            },
+            errorPlacement: function(error, element) {
+                if( element.attr( "name" ) === "year" || element.attr( "name" ) === "semester"){
+                    error.insertAfter(element.parent());
+                }else{
+                    error.insertAfter( element );
+                }
+            }
+        });
+    });
+
+    $("#submit").click(function(){
+        if($("#form2").valid() & $("#form1").valid()){   // test for validity
+            angular.element(document.getElementById('content')).scope().createModuleFormSubmit();
+        }
+        else {
+
+        }
+    });
+
+</script>
